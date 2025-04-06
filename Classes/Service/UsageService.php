@@ -64,7 +64,7 @@ final class UsageService implements UsageServiceInterface
         $language = 'en';
         if ($this->getBackendUser() !== null) {
             $uc = $this->getBackendUser()->uc;
-            if (is_array($uc) && array_key_exists('lang', $uc)) {
+            if (is_array($uc) && array_key_exists('lang', $uc) && $uc['lang'] !== 'default') {
                 $language = $uc['lang'];
             }
         }
